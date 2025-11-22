@@ -12,15 +12,8 @@ except Exception:
 
 
 class GeminiClient:
-    """
-    Simple wrapper around the Google GenAI SDK.
-    - Does NOT ask user for API key.
-    - Reads GEMINI_API_KEY from environment/.env.
-    - If not available, it runs in "disabled" mode and returns a message.
-    """
-
-    def __init__(self):
-        self.api_key = os.getenv("AIzaSyB7YjKHLX8CpJgWzo9PQXnKWtzY3r9XzRo")
+        def __init__(self):
+        self.api_key = os.getenv("GEMINI_API_KEY")
         self.client = None
         if HAS_GENAI_SDK and self.api_key:
             # The client automatically uses the API key passed here
